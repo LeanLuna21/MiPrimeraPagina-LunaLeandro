@@ -8,13 +8,13 @@ class Cliente(models.Model):
     dni = models.IntegerField()
 
 class Transaccion(models.Model):
-    nro_transaccion = models.IntegerField()
+    nro_transaccion = models.IntegerField() 
     cliente = models.ForeignKey(Cliente, on_delete=models.CASCADE,related_name='ventas')
     producto = models.ForeignKey(Producto, on_delete=models.CASCADE)
     cantidad = models.IntegerField()
     precio_total = models.FloatField(default=0) 
     fecha_de_venta = models.DateField()
 
-    def save(self):
+    def save(self, *args, **kwargs):
         self.precio_total == self.cantidad * self.producto.precio
-      
+        super().save(*args, **kwargs)
