@@ -1,6 +1,6 @@
 from django.urls import path
-from stock.views import agregar_producto
+from stock.views import *
 
 urlpatterns = [
-    path('agregar_producto',agregar_producto, name="agregar_producto")
+    path('productos/',productos, name="productos")
 ]

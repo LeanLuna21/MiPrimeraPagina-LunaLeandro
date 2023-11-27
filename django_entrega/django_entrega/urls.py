@@ -17,12 +17,13 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 # importamos el modulo views para direccionar el html
-from django_entrega.views import saludo_inicial
+from django_entrega.views import *
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', saludo_inicial),
+    path('', principal,name="inicio"),
     # urls de apps
-    path('stock/', include('stock.urls'))
+    path('stock/', include('stock.urls')),
+    path('ventas/', include('ventas.urls'))
 ]

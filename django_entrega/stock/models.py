@@ -11,3 +11,5 @@ class Producto(models.Model):
     descripcion = models.TextField()
     precio = models.FloatField
 
+    def __str__(self):
+        return f"Producto: {self.nombre}; {self.descripcion}. Precio: ${self.precio}."
