@@ -12,4 +12,4 @@ class Producto(models.Model):
     precio = models.FloatField
 
     def __str__(self):
-        return f"Producto: {self.nombre}; {self.descripcion}. Precio: ${self.precio}."
+        return f"Producto: {self.nombre}."

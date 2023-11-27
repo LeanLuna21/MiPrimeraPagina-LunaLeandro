@@ -8,7 +8,7 @@ class Cliente(models.Model):
     dni = models.IntegerField()
 
     def __str__(self):
-        return f"Cliente: {self.nombre}; Mail: {self.mail}."
+        return f"Cliente: {self.nombre}."
 
 class Transaccion(models.Model):
     nro_transaccion = models.IntegerField() 
@@ -19,4 +19,4 @@ class Transaccion(models.Model):
     fecha_de_venta = models.DateField()
 
     def __str__(self):
-        return f"Venta n°: {self.nro_transaccion}; {self.cliente} adquirio {self.producto}."
+        return f"Venta n°: {self.nro_transaccion}; Cliente: {self.cliente} ."
