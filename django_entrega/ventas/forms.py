@@ -21,9 +21,10 @@ class TransaccionFormulario (forms.Form):
         required=True,
         )
     cantidad = forms.IntegerField()
-    precio_total = forms.FloatField()
-    fecha_de_venta = forms.DateField()
-
+    precio_total = forms.FloatField()                   
+    fecha_de_venta = forms.CharField(widget=forms.TextInput(attrs={'placeholder': 'YYYY-MM-DD'}))
+                                        # de esta forma agregamos un placeholder, para que el usuario sepa que formato
+                                        # debe usar para completar la fecha de venta
 
 # cosas por agregar:
 
