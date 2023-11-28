@@ -2,19 +2,20 @@
 
 {% load static %}
 
-{% block contenidoQueCambia	%}
+{% block contenidoQueCambia %}
 
 <h1 style="text-align: center"> Esta es la pestaña productos </h1>
 
+{% if mi_formulario.error %}
+<p style="color:red"> Datos Invalidos! </p>
+{% endif %}
+
 <h2>Ingrese Producto: </h2>
-<form action="" method="POST">
-    <p>Nombre: <input type="text" name="nombre"></p>
-    <p>Medida: <input type="text" name="medida" placeholder="0cm"></p>
-    <p>Stock: <input type="number" name="stock" placeholder="0"></p>
-    <p>Descripcion: <input type="text" name="descripcion" placeholder="Ingrese breve descripcion."></p>
-    <p>Color (empuñadura): <input type="text" name="color_sable"></p>
-    <p>Color (luz): <input type="color" name="color_luz"></p>
+<form action="/stock/productos/" method="POST"> {% csrf_token %}
+    <table>
+        {{mi_formulario.as_table}}
+    </table>
     <input type="submit" value="Guardar">
 </form>
 
-{% endblock contenidoQueCambia	 %}
+{% endblock contenidoQueCambia %}

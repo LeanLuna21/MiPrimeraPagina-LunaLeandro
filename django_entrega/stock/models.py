@@ -7,9 +7,9 @@ class Producto(models.Model):
     medida = models.CharField(max_length=10)
     color_sable = models.CharField(max_length=50)
     color_luz = models.CharField(max_length=50)
-    cantidad_en_stock = models.IntegerField()
+    stock = models.IntegerField()
     descripcion = models.TextField()
-    precio = models.FloatField
+    precio = models.FloatField(default=0)
 
     def __str__(self):
         return f"Producto: {self.nombre}."

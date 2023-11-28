@@ -5,6 +5,3 @@ from django.shortcuts import render
 # crear fx que rendericen las htm
 def principal(request):
     return render(request, './index.html')
-
-
-
