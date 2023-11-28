@@ -29,5 +29,12 @@ def ingresar_producto(request):
     else: 
         mi_formulario = ProductoFormulario()     # se genera el formulario vacio
         return render (request,'productos.html',{'mi_formulario':mi_formulario})  # muestra el formulario en pantalla
-    
 
+
+def buscar(request):
+    respuesta = f"El producto seleccionado es: {request.GET['nombre']}"
+    return HttpResponse(respuesta)
+
+## como verificar si el producto existe? 
+## como envio 'error' si no completo el campo de busqueda?
+## como traigo no solo el producto sino tambien el precio y otros datos
