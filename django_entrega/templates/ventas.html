@@ -5,12 +5,16 @@
 
 <h1 style="text-align: center"> Esta es la pestaña ventas </h1>
 
-<h2 style="text-align: center"> Formulario - Busqueda Ventas: </h2>
+{% if mi_formulario.error %}
+<p style="color:red"> Datos Invalidos! </p>
+{% endif %}
 
-<form action="" method="POST">
-    <p>N° de venta: <input type="number" name="venta" id=""></p>
+<h2> Formulario - Ingresar Venta: </h2>
+<form action="/ventas/ingresar_venta/" method="POST"> {% csrf_token %}
+    <table>
+        {{mi_formulario.as_table}}
+    </table>
     <input type="submit" value="Guardar">
-¿'
 </form>
 
 {% endblock contenidoQueCambia %}

@@ -9,11 +9,11 @@
 <p style="color:red"> Datos Invalidos! </p>
 {% endif %}
 
-<h2>Ingrese Cliente: </h2>
-<form action="" method="POST">
-    <p>Nombre: <input type="text" name="cliente"></p>
-    <p>Mail: <input type="email" name="mail"></p>
-    <p>DNI: <input type="number" name="dni" placeholder="00.000.000"></p>
+<h2>Formulario - Ingresar Nuevo Cliente: </h2>
+<form action="/ventas/ingresar_cliente/" method="POST"> {% csrf_token %}
+    <table>
+        {{mi_formulario.as_table}}
+    </table>
     <input type="submit" value="Guardar">
 </form>
 {% endblock contenidoQueCambia %}

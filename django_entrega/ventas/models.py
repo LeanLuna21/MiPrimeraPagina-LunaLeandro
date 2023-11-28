@@ -12,8 +12,8 @@ class Cliente(models.Model):
 
 class Transaccion(models.Model):
     nro_transaccion = models.IntegerField() 
-    cliente = models.ForeignKey(Cliente, on_delete=models.CASCADE,related_name='ventas')
-    producto = models.ForeignKey(Producto, on_delete=models.CASCADE)
+    cliente = models.ForeignKey(Cliente, on_delete=models.CASCADE,related_name='ventas') # relaciona este modelo con el modelo de clientes
+    producto = models.ForeignKey(Producto, on_delete=models.CASCADE) # relaciona este modelo con el modelo de productos
     cantidad = models.IntegerField()
     precio_total = models.FloatField() 
     fecha_de_venta = models.DateField()

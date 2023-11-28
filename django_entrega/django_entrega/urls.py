@@ -21,9 +21,9 @@ from django_entrega.views import *
 
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('', principal,name="inicio"),
+    path('admin/', admin.site.urls), 
+    path('', principal,name="inicio"),  # esto se vera al iniciar el sitio (corresponde a index.html -> definido en el view)
     # urls de apps
-    path('stock/', include('stock.urls')),
+    path('stock/', include('stock.urls')),    # incluuirá todas las url generadas en la app stock
     path('ventas/', include('ventas.urls'))
 ]

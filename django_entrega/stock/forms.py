@@ -1,5 +1,6 @@
 from django import forms
 
+# creamos el formulario que traera los datos del html
 class ProductoFormulario(forms.Form):
     nombre= forms.CharField()
     medida= forms.CharField()
