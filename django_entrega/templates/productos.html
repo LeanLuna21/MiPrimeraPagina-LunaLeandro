@@ -1,5 +1,5 @@
 {% extends './template_padre.html' %}
-{% load static %}
+
 
 {% block contenidoQueCambia %}
 
@@ -9,12 +9,17 @@
 <p style="color:red"> Datos Invalidos! </p>
 {% endif %}
 
+<br>
+<br>
 <h2>Formulario - Ingresar Nuevo Producto: </h2>
+<br>
 <form action="/stock/ingresar_producto/" method="POST"> {% csrf_token %}
     <table>
         {{mi_formulario.as_table}}
     </table>
+    <br>
     <input type="submit" value="Guardar">
+    <br>
 </form>
 
 {% endblock contenidoQueCambia %}

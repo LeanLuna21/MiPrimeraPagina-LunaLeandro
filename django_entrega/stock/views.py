@@ -31,22 +31,18 @@ def ingresar_producto(request):
         return render (request,'productos.html',{'mi_formulario':mi_formulario})  # muestra el formulario en pantalla
 
 
-# def buscar(request):
-#     respuesta = f"El producto seleccionado es: {request.GET['nombre']}"
-#     return HttpResponse(respuesta)
 
 def buscar(request):
     if request.GET['nombre']:
         nombre = request.GET['nombre'] # Rey
         # filtra la bbdd 
-        producto = Producto.objects.filter(nombre__icontains=nombre)
-        
-        
-        return render(request,'resultados_busqueda.html',{'nombre':producto[0]})
+        try:
+            producto = Producto.objects.filter(nombre__icontains=nombre)
+            return render(request,'resultados_busqueda.html',{'nombre':producto[0]})
+        except:
+            producto = " no esta en stock! "
+            return render(request,'resultados_busqueda.html',{'nombre':producto})
+            
     else:
-        respuesta = "No enviaste datos"
+        respuesta = "No has proporcionado datos de busqueda."
         return HttpResponse(respuesta)
-
-## como verificar si el producto existe? 
-## como envio 'error' si no completo el campo de busqueda?
-## como traigo no solo el producto sino tambien el precio y otros datos
