@@ -45,12 +45,12 @@ Para probarlos, sugiero estos ejemplos:
 - Cosas que me gustaria agregar:
    
     - en la busqueda de producto:  
-        ## como verificar si el producto existe? 
-        ## como envio 'error' si no completo el campo de busqueda?
-        ## como traigo no solo el producto sino tambien el precio y otros datos
+        ### como verificar si el producto existe? 
+        ### como envio 'error' si no completo el campo de busqueda?
+        ### como traigo no solo el producto sino tambien el precio y otros datos
 
     - en el formulario de ventas:
-        # el nro de transaccion no deberia poder repetirse... quiza traer el nro siguiente al que esta?
-        # el precio total deberia ser un resultado de la cantidad (elegida por el usuario), y el precio (traido del modelo)
-        # la cantidad no deberia ser superior al stock 
+        ### el nro de transaccion no deberia poder repetirse... quiza traer el nro siguiente al que esta?
+        ### el precio total deberia ser un resultado de la cantidad (elegida por el usuario), y el precio (traido del modelo)
+        ### la cantidad no deberia ser superior al stock 
 
